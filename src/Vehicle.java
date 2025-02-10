@@ -21,12 +21,30 @@ public class Vehicle {
     }
 
     public void setSpeed(double speed){
-        if(speed>0){
-            this.speed=speed;
-        }else{
-            System.out.println("speed Error, default to 100");
-            this.speed=100;
+        switch (this.getCategory()) {
+            case "car":
+                if(speed>0 && speed<=200){
+                    this.speed=speed;
+                }else{
+                    System.out.println("speed Error, default to 100");
+                    this.speed=100;
+                }
+                break;
+            case "airplane":
+                if(speed>200 && speed <4000){
+                    this.speed=speed;
+                }else{
+                    System.out.println("speed Error, default to 3000");
+                    this.speed=4000;
+                }
+                break;
+            default:
+                if(speed>0){
+                    this.speed=speed;
+                }
+
         }
+
 
     }
 
@@ -36,5 +54,10 @@ public class Vehicle {
 
     public double getSpeed() {
         return speed;
+    }
+
+    public void showInfo(){
+        System.out.println("category "+category);
+        System.out.println("speed "+speed);
     }
 }
