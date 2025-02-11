@@ -6,7 +6,17 @@ public class OceanCar {
     private String size;
     private double price;
 
-    public int power; // the same named variable with in the subclass
+    public int publicPower;
+
+    private int power; // the same named variable with in the subclass
+
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
 
     public String getModel() {
         return model;
@@ -42,5 +52,9 @@ public class OceanCar {
 
     public void drive(){
         System.out.println(this.model+" is running on the road.");
+    }
+
+    public void show(){
+        System.out.println("parent class power "+power);
     }
 }
