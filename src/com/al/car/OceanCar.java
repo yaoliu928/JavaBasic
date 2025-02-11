@@ -10,6 +10,15 @@ public class OceanCar {
 
     private int power; // the same named variable with in the subclass
 
+//    public OceanCar() {
+//        System.out.println("parent constructor");
+//    }
+
+
+    public OceanCar(String model) {
+        this.model = model;
+    }
+
     public int getPower() {
         return power;
     }
@@ -56,5 +65,9 @@ public class OceanCar {
 
     public void show(){
         System.out.println("parent class power "+power);
+    }
+
+    public static void charge(){
+        System.out.println("in charging...");
     }
 }

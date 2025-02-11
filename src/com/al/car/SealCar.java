@@ -3,6 +3,11 @@ package com.al.car;
 public class SealCar extends OceanCar {
     private int power = 530;
 
+    public SealCar() {
+        super("white model");
+        System.out.println("child constructor");
+    }
+
     @Override
     public int getPower() {
         return power;
@@ -20,5 +25,9 @@ public class SealCar extends OceanCar {
         System.out.println("parent public class power " + super.publicPower);
     }
 
+
+    public static void charge(){
+        System.out.println("in charging...");
+    }
 
 }
