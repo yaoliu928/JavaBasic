@@ -6,6 +6,8 @@ public class OceanCar {
     private String size;
     private double price;
 
+    public int power; // the same named variable with in the subclass
+
     public String getModel() {
         return model;
     }
@@ -36,5 +38,9 @@ public class OceanCar {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public void drive(){
+        System.out.println(this.model+" is running on the road.");
     }
 }
