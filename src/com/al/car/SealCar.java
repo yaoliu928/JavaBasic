@@ -3,6 +3,13 @@ package com.al.car;
 public class SealCar extends OceanCar {
     private int power = 530;
 
+    @Override
+    public String toString() {
+        return "SealCar{" +
+                "power=" + power +
+                '}';
+    }
+
     public SealCar() {
         super("white model");
         System.out.println("child constructor");
