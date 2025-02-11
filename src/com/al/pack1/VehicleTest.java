@@ -1,3 +1,5 @@
+package com.al.pack1;
+
 public class VehicleTest {
     public static void main(String[] args) {
         Vehicle car = new Vehicle("car", 160);

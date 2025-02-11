@@ -1,14 +1,27 @@
+package com.al.pack1;
+
 public class Vehicle {
 
     private String category;
     private  double speed;
+    private static int count =0;
 
     public Vehicle() {
+        count++;
     }
 
     public Vehicle(String category, double speed) {
         this.category = category;
         this.speed = speed;
+        count++;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Vehicle.count = count;
     }
 
     public void setCategory(String category){
@@ -56,7 +69,7 @@ public class Vehicle {
         return speed;
     }
 
-    public void showInfo(){
+    protected void showInfo(){
         System.out.println("category "+category);
         System.out.println("speed "+speed);
     }
