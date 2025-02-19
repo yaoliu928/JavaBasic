@@ -28,6 +28,5 @@ public class ParkingTest {
         parkingList.clear();
         parkingList.isEmpty();
         System.out.println(parkingList.isEmpty());
-
     }
 }
