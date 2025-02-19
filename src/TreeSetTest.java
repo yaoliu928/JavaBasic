@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.TreeSet;
 
 public class TreeSetTest {
@@ -29,6 +30,9 @@ public class TreeSetTest {
         MyComparator myComparator = new MyComparator();
 
         TreeSet<Family> familySet = new TreeSet<>(myComparator);
+
+
+
         Family family1 = new Family("FAM1", 100, "2021-01-01");
         Family family2 = new Family("FAM2", 200, "2021-01-02");
         Family family3 = new Family("FAM3", 300, "2021-01-06");
@@ -46,5 +50,31 @@ public class TreeSetTest {
         for (Family family : familySet) {
             System.out.println(family);
         }
+
+        TreeSet<Family> familySet2 = new TreeSet<>(new Comparator<Family>() {
+            @Override
+            public int compare(Family o1, Family o2) {
+                float result = o2.getFamilyScore() - o1.getFamilyScore();
+                if (result == 0) {
+                    return o1.getRegTime().compareTo(o2.getRegTime());
+                } else if (result > 0) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+        });
+
+        familySet2.add(family1);
+        familySet2.add(family2);
+        familySet2.add(family3);
+        familySet2.add(family4);
+        familySet2.add(family5);
+        familySet2.add(family6);
+        System.out.println("-----------------set2-----------------");
+        for (Family family : familySet2) {
+            System.out.println(family);
+        }
+
     }
 }
