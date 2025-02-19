@@ -1,4 +1,4 @@
-public class Parking {
+public class Parking implements Comparable<Parking> {
     private String parkingNumber;
     private String carNumber;
 
@@ -32,5 +32,11 @@ public class Parking {
                 "parkingNumber='" + parkingNumber + '\'' +
                 ", carNumber='" + carNumber + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Parking o) {
+        int result = this.parkingNumber.compareTo(o.getParkingNumber());
+        return result;
     }
 }
