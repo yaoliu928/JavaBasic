@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,5 +29,27 @@ public class LoopTest {
         for(Object item:parkingList){
             System.out.println(item);
         }
+
+        System.out.println("-----------------");
+        // Create a iterator
+        Iterator it = parkingList.iterator();
+        // Loop through the list
+        while (it.hasNext()) {
+            Parking parking = (Parking) it.next();
+            System.out.println(parking);
+        }
+
+        List nameList = new ArrayList<>();;
+        nameList.add("John");
+        nameList.add("Tom");
+        System.out.println("Before removing"+nameList);
+        Iterator it2 = nameList.iterator();
+        while (it2.hasNext()) {
+            Object next=it2.next();
+            if(next == "Tom"){
+                it2.remove();
+            }
+        }
+        System.out.println("After removing"+nameList);
     }
 }
