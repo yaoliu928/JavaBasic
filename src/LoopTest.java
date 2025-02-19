@@ -11,7 +11,7 @@ public class LoopTest {
         Parking parking4 =new Parking("PARk4","CARNUM4");
         Parking parking5 =new Parking("PARk5","CARNUM5");
 
-        List parkingList = new ArrayList<>();
+        List <Parking>parkingList = new ArrayList<>();
 
         parkingList.add(parking1);
         parkingList.add(parking2);
@@ -20,7 +20,7 @@ public class LoopTest {
         parkingList.add(parking5);
 
         for (int i = 0; i < parkingList.size(); i++) {
-            Parking parking = (Parking) parkingList.get(i);
+            Parking parking =  parkingList.get(i);
             System.out.println(parking);
         }
 
